@@ -22,7 +22,7 @@ function Veggie() {
         if(check){
             setVeggie(JSON.parse(check))
         } else {
-            const api = await fetch (`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9&tags=vegetarian`);
+            const api = await fetch (`https://api.spoonacular.com/recipes/random?apiKey=${process.env.REACT_APP_API_KEY}&number=9&include-tags=vegetarian`);
             const data = await api.json();
 
             localStorage.setItem('popular', JSON.stringify(data.recipes))
